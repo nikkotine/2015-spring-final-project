@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Art 336 Framework</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/docs.css">
+    </head>
+    
+    <body>
+        
+        <header role="banner" class="fixed">
+            <div class="row fixed-height">
+                <div class="col-6">
+                    <h1>Art 336 Framework</h1>
+                </div>
+                <div class="col-6 fixed-nav text-right">
+                    <input type="checkbox" id="navbar-checkbox" class="navbar-checkbox">
+                    <nav class="menu">
+                        <ul>
+                            <li><a href="docs.html" class="menu-link">Home</a></li>
+                            <li><a href="#lightbox" class="scroll menu-link">Lightbox</a></li>
+                            <li><a href="#carousel" class="scroll menu-link">Carousel</a></li>
+                            <li><a href="#modal" class="scroll menu-link">Modal</a></li>
+                            <li><a href="#collapse" class="scroll menu-link">Collapse</a></li>
+                            <li><a href="#headlines" class="scroll menu-link">Headlines</a></li>
+                            <li><a href="#height" class="scroll menu-link">Height</a></li>
+                        </ul>
+                        <label for="navbar-checkbox" class="navbar-handle"></label>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        
+        <main class="main" role="main">
+            <div class="row fixed-clear css3-nav-code">
+                <div class="col-12 section-header vcenter"><h2>Responsive Nav</h2></div>
+                <div class="col-4 vcenter">The HTML</div>
+                <div class="col-8">
+                    <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/html/nav.html"></script>
+                </div>
+                <div class="col-4 vcenter">The CSS</div>
+                <div class="col-8">
+                    <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/scss/framework/_nav.scss?slice=0:5"></script>
+                </div>
+                <div class="col-4 vcenter">The Javascript</div>
+                <div class="col-8">
+                    <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/js/vendor/height-offset.js?slice=0:5"></script>
+                </div>
+            </div>
+
+            <section class="goodies-css3">
+                <div class="row css3-lightbox">
+                    <a id="lightbox"></a>
+                    <div class="col-12 section-header vcenter"><h2>Light Box</h2></div>
+                    <!-- Lightbox Code Starts Here -->
+                        <!-- Thumbnail gallery content starts here -->
+                        <div class="container">
+                            <div class="col-2 thumb">
+                                <a href="#picture_1">
+                                    <img src="http://fakeimg.pl/200x200/F90/fff/?text=800x600">
+                                </a>
+                            </div>
+                            <div class="col-2 thumb">
+                                <a href="#picture_2">
+                                    <img src="http://fakeimg.pl/200x200/F90/fff/?text=800x800">
+                                </a>
+                            </div>
+                            <div class="col-2 thumb">
+                                <a href="#picture_3">
+                                    <img src="http://fakeimg.pl/200x200/F90/fff/?text=960x640">
+                                </a>
+                            </div>
+                            <div class="col-2 thumb">
+                                <a href="#picture_4">
+                                    <img src="http://fakeimg.pl/200x200/F90/fff/?text=1024x768">
+                                </a>
+                            </div>
+                            <div class="col-2 thumb">
+                                <a href="#picture_5">
+                                    <img src="http://fakeimg.pl/200x200/F90/fff/?text=1334x750">
+                                </a>
+                            </div>
+                            <div class="col-2 thumb">
+                                <a href="#picture_6">
+                                    <img src="http://fakeimg.pl/200x200/F90/fff/?text=1440x960">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Thumbnail gallery content ends here -->
+
+                        <!-- Full sized gallery starts here -->
+                        <span id="gallery"></span>
+                        <input id="do_loop" type="checkbox" name="do_loop" value="">
+                        <span id="picture_1" class="picture">
+                            <img src="http://fakeimg.pl/800x600/F90/fff/?text=800x600">
+                            <a class="prev loop" href="#picture_6"></a>
+                            <a class="next" href="#picture_2"></a>
+                        </span>
+                        <span id="picture_2" class="picture">
+                            <img src="http://fakeimg.pl/800x800/F90/fff/?text=800x800">
+                            <a class="prev" href="#picture_1"></a>
+                            <a class="next" href="#picture_3"></a>
+                        </span>
+                        <span id="picture_3" class="picture">
+                            <img src="http://fakeimg.pl/960x640/F90/fff/?text=960x640">
+                            <a class="prev" href="#picture_2"></a>
+                            <a class="next" href="#picture_4"></a>
+                        </span>
+                        <span id="picture_4" class="picture">
+                            <img src="http://fakeimg.pl/1024x768/F90/fff/?text=1024x768">
+                            <a class="prev" href="#picture_3"></a>
+                            <a class="next" href="#picture_5"></a>
+                        </span>
+                        <span id="picture_5" class="picture">
+                            <img src="http://fakeimg.pl/1334x750/F90/fff/?text=1334x750">
+                            <a class="prev" href="#picture_4"></a>
+                            <a class="next" href="#picture_6"></a>
+                        </span>
+                        <span id="picture_6" class="picture">
+                            <img src="http://fakeimg.pl/1440x960/F90/fff/?text=1440x960">
+                            <a class="prev" href="#picture_5"></a>
+                            <a class="next loop" href="#picture_1"></a>
+                        </span>
+
+                        <span id="chrome">
+                            <label class="loop" for="do_loop">Loop</label>
+                            <a class="close" href="#gallery"></a>
+                        </span>
+
+                        <div id="cover"></div>
+                        <div id="loading"></div>
+                        <!-- Full sized gallery ends here -->
+                    <!-- Lightbox Code Ends Here -->
+                    <div class="row css3-lightbox-code">
+                        <div class="col-4 vcenter">The HTML</div>
+                        <div class="col-8">
+                            <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/html/lightbox.html"></script>
+                        </div>
+                        <div class="col-4 vcenter">The CSS</div>
+                        <div class="col-8">
+                            <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/scss/framework/_lightbox.scss?slice=0:5"></script>
+                        </div>
+                        <div class="col-4 vcenter">The Images</div>
+                        <div class="col-8">
+                            <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/img/close.svg"></script>
+                            <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/img/close-hover.svg"></script>
+                            <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/img/next.svg"></script>
+                            <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/img/next-hover.svg"></script>
+                            <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/img/prev.svg"></script>
+                            <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/img/prev-hover.svg"></script>
+                        </div>
+                    </div>
+                </div>
+                <div class="row css3-carousel">
+                    <a id="carousel"></a>
+                    <div class="col-12 section-header vcenter"><h2>Content Carousel</h2></div>
+                    <div class="col-12">
+                        <!-- Begin Carousel -->
+                        <div class="carousel"> 
+                            <div class="carousel-inner">
+                                <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+                                <div class="carousel-item">
+                                    <img src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Carousel">
+                                </div>
+
+                                <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+                                <div class="carousel-item">
+                                    <img src="http://fakeimg.pl/2000x800/DA5930/fff/?text=Without">
+                                </div>
+
+                                <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+                                <div class="carousel-item">
+                                    <img src="http://fakeimg.pl/2000x800/F90/fff/?text=JavaScript">
+                                </div>
+
+                                <input class="carousel-open" type="radio" id="carousel-4" name="carousel" aria-hidden="true" hidden="">
+                                <div class="carousel-item">
+                                    <p>Lorem ipsum dolor sit amet, ad erat appetere gloriatur his, mea ei dictas utroque adipisci, cum et eirmod ancillae assueverit. Oratio reprimique est et, ea cetero aliquid cum. Et mucius corpora vim. Ne has admodum nominati interesset, at omnis nostro nostrum usu. Eum modo magna petentium at, cetero vituperata ex quo, elit adipiscing at per.</p>
+                                    <p>Lorem ipsum dolor sit amet, ad erat appetere gloriatur his, mea ei dictas utroque adipisci, cum et eirmod ancillae assueverit. Oratio reprimique est et, ea cetero aliquid cum. Et mucius corpora vim. Ne has admodum nominati interesset, at omnis nostro nostrum usu. Eum modo magna petentium at, cetero vituperata ex quo, elit adipiscing at per.</p>
+                                    <p>Lorem ipsum dolor sit amet, ad erat appetere gloriatur his, mea ei dictas utroque adipisci, cum et eirmod ancillae assueverit. Oratio reprimique est et, ea cetero aliquid cum. Et mucius corpora vim. Ne has admodum nominati interesset, at omnis nostro nostrum usu. Eum modo magna petentium at, cetero vituperata ex quo, elit adipiscing at per.</p>
+                                    <p>Lorem ipsum dolor sit amet, ad erat appetere gloriatur his, mea ei dictas utroque adipisci, cum et eirmod ancillae assueverit. Oratio reprimique est et, ea cetero aliquid cum. Et mucius corpora vim. Ne has admodum nominati interesset, at omnis nostro nostrum usu. Eum modo magna petentium at, cetero vituperata ex quo, elit adipiscing at per.</p>
+                                </div>
+
+                                <label for="carousel-1" class="carousel-control prev control-2"></label>
+                                <label for="carousel-1" class="carousel-control next control-4"></label>
+
+                                <label for="carousel-2" class="carousel-control prev control-3"></label>
+                                <label for="carousel-2" class="carousel-control next control-1"></label>
+
+                                <label for="carousel-3" class="carousel-control prev control-4"></label>
+                                <label for="carousel-3" class="carousel-control next control-2"></label>
+
+                                <label for="carousel-4" class="carousel-control prev control-1"></label>
+                                <label for="carousel-4" class="carousel-control next control-3"></label>
+
+                                <ol class="carousel-indicators">
+                                    <span class="carousel-indicators-background">
+                                        <li>
+                                            <label for="carousel-1" class="carousel-bullet">•</label>
+                                        </li>
+                                        <li>
+                                            <label for="carousel-2" class="carousel-bullet">•</label>
+                                        </li>
+                                        <li>
+                                            <label for="carousel-3" class="carousel-bullet">•</label>
+                                        </li>
+                                        <li>
+                                            <label for="carousel-4" class="carousel-bullet">•</label>
+                                        </li>
+                                    </span>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- End Carousel -->
+                    </div>
+                </div>
+                <div class="row css3-carousel-code">
+                    <div class="col-4 vcenter">The HTML</div>
+                    <div class="col-8">
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/html/carousel.html"></script>
+                    </div>
+                    <div class="col-4 vcenter">The CSS</div>
+                    <div class="col-8">
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/scss/framework/_carousel.scss?slice=0:5"></script>
+                    </div>
+                    <div class="col-4 vcenter">The Images</div>
+                    <div class="col-8">
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/img/close.svg"></script>
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/img/close-hover.svg"></script>
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/img/next.svg"></script>
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/img/next-hover.svg"></script>
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/img/prev.svg"></script>
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/img/prev-hover.svg"></script>
+                    </div>
+                </div>
+                <div class="row css3-modal">
+                    <a id="modal"></a>
+                    <div class="col-12 section-header vcenter"><h2>Modal</h2></div>
+                    <div class="col-12">
+                        <!-- Begin Modal Links -->
+                        <label class="btn" for="modal-one">Example Modal #1</label><br/>
+                        <label class="btn" for="modal-two">Example Modal #2</label>
+                        <!-- End Modal Links -->
+
+                        <!-- Begin Modal Content -->
+                        <!-- Modal One -->
+                        <aside class="modal">
+                            <input class="modal-open" id="modal-one" type="checkbox" hidden>
+                            <div class="modal-wrap" aria-hidden="true" role="dialog">
+                                <label class="modal-overlay" for="modal-one"></label>
+                                <div class="modal-dialog">
+                                    <label class="btn-close" for="modal-one" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="100" height="100" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M50 0C22.4 0 0 22.4 0 50c0 27.6 22.4 50 50 50s50-22.4 50-50C100 22.4 77.6 0 50 0zM80.7 70.1L70.1 80.7c-0.6 0.6-1.5 0.6-2.1 0l-18-18 -18 18c-0.6 0.6-1.5 0.6-2.1 0L19.3 70.1c-0.6-0.6-0.6-1.5 0-2.1l18-18 -18-18c-0.6-0.6-0.6-1.5 0-2.1l10.6-10.6c0.6-0.6 1.5-0.6 2.1 0l18 18 18-18c0.6-0.6 1.5-0.6 2.1 0l10.6 10.6c0.6 0.6 0.6 1.5 0 2.1l-18 18 18 18C81.3 68.6 81.3 69.5 80.7 70.1z"/></svg></label>
+                                    <h2>Modal #1</h2>
+                                    <p>First modal example</p>
+                                </div>
+                            </div>
+                        </aside>
+
+                         <!-- Modal Two -->
+                        <aside class="modal">
+                            <input class="modal-open" id="modal-two" type="checkbox" hidden>
+                            <div class="modal-wrap" aria-hidden="true" role="dialog">
+                                <label class="modal-overlay" for="modal-two"></label>
+                                <div class="modal-dialog">
+                                    <label class="btn-close" for="modal-two" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="100" height="100" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M50 0C22.4 0 0 22.4 0 50c0 27.6 22.4 50 50 50s50-22.4 50-50C100 22.4 77.6 0 50 0zM80.7 70.1L70.1 80.7c-0.6 0.6-1.5 0.6-2.1 0l-18-18 -18 18c-0.6 0.6-1.5 0.6-2.1 0L19.3 70.1c-0.6-0.6-0.6-1.5 0-2.1l18-18 -18-18c-0.6-0.6-0.6-1.5 0-2.1l10.6-10.6c0.6-0.6 1.5-0.6 2.1 0l18 18 18-18c0.6-0.6 1.5-0.6 2.1 0l10.6 10.6c0.6 0.6 0.6 1.5 0 2.1l-18 18 18 18C81.3 68.6 81.3 69.5 80.7 70.1z"/></svg></label>
+                                    <h2>Modal #2</h2>
+                                    <p>Second modal example</p>
+                                </div>
+                            </div>
+                        </aside>
+                        <!-- End Modal Content -->
+                    </div>
+                </div>
+                <div class="row css3-modal-code">
+                    <div class="col-4 vcenter">The HTML</div>
+                    <div class="col-8">
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/html/modal.html"></script>
+                    </div>
+                    <div class="col-4 vcenter">The CSS</div>
+                    <div class="col-8">
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/scss/framework/_modal.scss?slice=0:5"></script>
+                    </div>
+                </div>
+                <div class="row css3-collapse">
+                    <a id="collapse"></a>
+                    <div class="col-12 section-header vcenter"><h2>Collapse</h2></div>
+                    <div class="col-5">
+                        <!-- Begin Toggle Code Example #1 -->
+                        <div class="collapse-wrap">
+                            <a href="#collapse-1" id="collapse-1" class="toggler">Click to Toggle</a>
+                            <a href="#collapse" class="untoggler">Click to Toggle</a>
+                            <div class="animate">
+                                <p>Cu eam amet fuisset perfecto, dico latine oporteat eu vis, ius dicta nostro te. Alia stet sit an, rebum postea ea duo. Per cibo paulo elaboraret cu. Te hinc aperiri impedit sit, quidam ponderum laboramus per te, altera labitur verterem per et. Alia moderatius ad vel.</p>
+                                <p>Cu eam amet fuisset perfecto, dico latine oporteat eu vis, ius dicta nostro te. Alia stet sit an, rebum postea ea duo. Per cibo paulo elaboraret cu. Te hinc aperiri impedit sit, quidam ponderum laboramus per te, altera labitur verterem per et. Alia moderatius ad vel.</p>
+                            </div>
+                        </div>
+                        <!-- End Toggle Code Example #1 -->
+                    </div>
+                    <div class="col-7">
+                        <!-- Begin Toggle Code Example #2 -->
+                        <div class="collapse-wrap">
+                            <a href="#collapse-2" id="collapse-2" class="toggler">Click to Toggle</a>
+                            <a href="#collapse" class="untoggler">Click to Toggle</a>
+                            <div class="animate">
+                                <p>Cu eam amet fuisset perfecto, dico latine oporteat eu vis, ius dicta nostro te. Alia stet sit an, rebum postea ea duo. Per cibo paulo elaboraret cu. Te hinc aperiri impedit sit, quidam ponderum laboramus per te, altera labitur verterem per et. Alia moderatius ad vel.</p>
+                                <p>Cu eam amet fuisset perfecto, dico latine oporteat eu vis, ius dicta nostro te. Alia stet sit an, rebum postea ea duo. Per cibo paulo elaboraret cu. Te hinc aperiri impedit sit, quidam ponderum laboramus per te, altera labitur verterem per et. Alia moderatius ad vel.</p>
+                            </div>
+                        </div>
+                        <!-- End Toggle Code Example #2 -->
+                    </div>
+                </div>
+                <div class="row css3-collaspe-code">
+                    <div class="col-4 vcenter">The HTML</div>
+                    <div class="col-8">
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/html/collapse.html"></script>
+                    </div>
+                    <div class="col-4 vcenter">The CSS</div>
+                    <div class="col-8">
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/scss/framework/_collapse.scss?slice=0:5"></script>
+                    </div>
+                </div>
+            </section>
+            <section class="goodies-javascript">
+                <div class="row javascript-headlines">
+                    <a id="headlines"></a>
+                    <div class="col-12 section-header vcenter"><h2>Fullwidth Headlines</h2></div>
+                    <div class="col-4"><h2 data-fitter-happier-text>FOUR COLUMNS</h1></div>
+                    <div class="col-8"><h2 data-fitter-happier-text>EIGHT COLUMNS</h1></div>
+                </div>
+                <div class="row javascript-headlines-code">
+                    <div class="col-4 vcenter">The HTML</div>
+                    <div class="col-8">
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/html/headlines.html"></script>
+                    </div>
+                    <div class="col-4 vcenter">The Javascript</div>
+                    <div class="col-8">
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/js/vendor/fitter-happier-text.js?slice=0:5"></script>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 section-header vcenter"><h2>Equal Height Coloumns</h2></div>
+                </div>
+                <div class="row padding equal-height goodies-equal-height">
+                    <a id="height"></a>
+                    <div class="col-4 col">
+                        <h3>Equal Height Coloumns</h3>
+                        <p>Lorem ipsum dolor sit amet, quidam contentiones mea ad. Veritus deterruisset eu eos, hinc populo nostrud in sed, agam scripta mea te. Ei sint purto his. Te eam noster petentium. Duo tota omittam conclusionemque no, at dolore invidunt legendos est.</p>
+
+                        <p>Eos eu philosophia mediocritatem, vis legere tractatos at, mel cu omnium aeterno corpora. Eu debet explicari his. Cum solet putant ne, apeirian erroribus referrentur in cum, mea ei mutat similique. Nec te homero accusam, vel ea ferri labore fabulas. Pri et integre omittam. Id his graeci noster lucilius.</p>
+                    </div>
+                    <div class="col-4 col">
+                        <h3>Equal Height Coloumns</h3>
+                        <p>Lorem ipsum dolor sit amet, quidam contentiones mea ad. Veritus deterruisset eu eos, hinc populo nostrud in sed, agam scripta mea te. Ei sint purto his. Te eam noster petentium. Duo tota omittam conclusionemque no, at dolore invidunt legendos est.</p>
+                    </div>
+                    <div class="col-4 col">
+                        <h3>Equal Height Coloumns</h3>
+                    </div>
+                </div>
+                <div class="row goodies-equal-height-code">
+                    <div class="col-4 vcenter">The HTML</div>
+                    <div class="col-8">
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/demo/html/height.html"></script>
+                    </div>
+                    <div class="col-4 vcenter">The Javascript</div>
+                    <div class="col-8">
+                        <script src="http://gist-it.appspot.com/github/garyrozanc/art336-boilerplate/blob/master/js/vendor/equal-height.js?slice=0:5"></script>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <script src="js/docs.min.js"></script>
+               
+    </body>
+    
+</html>

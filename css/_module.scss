@@ -1,0 +1,25 @@
+/* Module.scss */
+
+nav[role="navigation"] {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+header[role="banner"] {
+    background: url('../backgroundphoto/b&wphotome.jpg') left center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+    width: 100vw;
+}
+
+.banner-text {
+    border: 1px solid #fff;
+    background-color: rgbs(0, 0, 0, 0.4);
+    color: #fff;
+    line-height: 1;
+}
+
+.banner-headline {
+    font-size: 8vw;
+    margin:0;
+}
